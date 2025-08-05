@@ -69,8 +69,8 @@ if __name__ == "__main__":
     data = {
         "gender": "Male",
         "age": 45,
-        "hypertension": 1,
-        "heart_disease": 0,
+        "hypertension": "yes",
+        "heart_disease": "yes",
         "ever_married": "Yes",
         "work_type": "Private",
         "Residence_type": "Urban",

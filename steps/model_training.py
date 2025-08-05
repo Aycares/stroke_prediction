@@ -22,7 +22,8 @@ def train_model(X_train: pd.DataFrame,
                                                 "Model Object"]:
     model = None
     try:
-        model = XGBClassifier(random_state=23)
+        model = XGBClassifier(random_state=23,max_depth=3,n_estimator=100,
+                              learning_rate=0.1,subsample=0.8,colsample_bytree=0.8)
         model.fit(X_train, y_train)
         train_preds = model.predict(X_train)
         test_preds = model.predict(X_test)
@@ -33,8 +34,8 @@ def train_model(X_train: pd.DataFrame,
         
         logger.info(f"""
                     Completed training the base model with metrics:
-                    train rmse: {train}
-                    test rmse: {test}
+                    train: {train}
+                    test: {test}
                     """)
     except Exception as err:
         logger.error(f"An error occured. Detail: {err}")

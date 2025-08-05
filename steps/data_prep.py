@@ -45,10 +45,10 @@ def split_dataset(data: pd.DataFrame) -> Tuple[
     Annotated[Optional[pd.Series], "y_test"]]:
     X_train, X_test, y_train, y_test = None, None, None, None
     try:
-        X = data.drop(columns=['charges'])
-        y = data['charges']
+        X = data.drop(columns=['stroke'])
+        y = data['stroke']
         X_train, X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,
-                                                          random_state=23)
+                                                          random_state=23,stratify=y)
         logger.info(f"Splitting completed with shape X_train: {X_train.shape}")
     except Exception as err:
         logger.error(f"An error occured. Detail: {err}")

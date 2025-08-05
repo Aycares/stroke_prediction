@@ -14,7 +14,7 @@ load_dotenv()
 logfire_token = os.getenv(key="LOGFIRE_TOKEN")
 
 # initialize the app
-app = FastAPI(title="Endpoint For Insurance Prediction",
+app = FastAPI(title="Endpoint For stroke Prediction",
               version= "v1")
 
 logfire.configure(token=logfire_token)

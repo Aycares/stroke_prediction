@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi[all]<=0.116.1",
+    "imbalanced-learn>=0.12.4",
     "logfire[fastapi]>=4.1.0",
     "pandas>=2.3.1",
     "scikit-learn>=1.7.1",
